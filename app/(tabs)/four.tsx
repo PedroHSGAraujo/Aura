@@ -4,13 +4,13 @@ import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import Header from '@/components/Header';
 
-export default function TabOneScreen() {
+export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
       <Header />
       <View style={styles.title}>
         <Text style={styles.text}>
-          Home
+          Conta
         </Text>
       </View>
     </View>
