@@ -1,14 +1,16 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import Feather from '@expo/vector-icons/Feather';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import Header from '@/components/Header';
+import Card from '@/components/Card'
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
       <Header />
       <View style={styles.search}>
         <Text style={styles.stext}>
@@ -63,7 +65,24 @@ export default function TabOneScreen() {
           </Text>
         </View>
       </View>
+      <View style={styles.doctxt}>
+        <Text style={styles.pertotxt}>
+          Doutores perto de você
+        </Text>
+        <Text style={styles.vertxt}>
+          Ver todos
+        </Text>
+      </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.cards}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ScrollView>
     </View>
+    </ScrollView>
   );
 }
 
@@ -87,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     width: '90%',
     height: 80,
-    marginTop: 30,
+    marginTop: 20,
     borderRadius: 15,
     display: 'flex',
     flexDirection: 'row',
@@ -142,5 +161,29 @@ const styles = StyleSheet.create({
   gtext: {
     color: '#00A651',
     fontWeight: "bold",
+  },
+  doctxt: {
+    backgroundColor: '#f8f8f8',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '90%',
+    marginTop: 40,
+  },
+  pertotxt: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 600,
+  },
+  vertxt: {
+    color: '#00A651',
+    fontSize: 15,
+    fontWeight: 600,
+  },
+  cards: {
+    backgroundColor: '#f8f8f8',
+    width: '100%',
+    height: 200,
   }
 });
